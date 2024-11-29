@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify User</title>
+</head>
+<body>
+    <h1>Modify User</h1>
+    <form method="POST">
+        <label>Username:</label><br>
+        <input type="text" name="username" value="{{ user[1] }}" required><br>
+        <label>Password:</label><br>
+        <input type="password" name="password" value="{{ user[2] }}" required><br>
+        <label>Role:</label><br>
+        <select name="role">
+            <option value="user" {% if user[3] == 'user' %}selected{% endif %}>User</option>
+            <option value="admin" {% if user[3] == 'admin' %}selected{% endif %}>Admin</option>
+        </select><br>
+        <label>Permissions:</label><br>
+        <select name="permissions">
+            <option value="read" {% if user[4] == 'read' %}selected{% endif %}>Read</option>
+            <option value="write" {% if user[4] == 'write' %}selected{% endif %}>Write</option>
+            <option value="edit" {% if user[4] == 'edit' %}selected{% endif %}>Edit</option>
+            <option value="admin" {% if user[4] == 'admin' %}selected{% endif %}>Admin</option>
+        </select><br><br>
+        <button type="submit">Update User</button>
+    </form>
+</body>
+</html>
+

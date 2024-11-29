@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Monitoring</title>
+</head>
+<body>
+    <h1>System Monitoring</h1>
+    
+    <h2>Disk Usage</h2>
+    <p>Total Disk Space: {{ '%.2f' % (disk_usage.total / (1024**3)) }} GB</p>
+    <p>Used Disk Space: {{ '%.2f' % (disk_usage.used / (1024**3)) }} GB</p>
+    <p>Free Disk Space: {{ '%.2f' % (disk_usage.free / (1024**3)) }} GB</p>
+    <p>Disk Usage: {{ disk_usage.percent }}%</p>
+
+    <h2>CPU Usage</h2>
+    <p>CPU Usage: {{ cpu_usage }}%</p>
+
+    <h2>System Logs</h2>
+    <ul>
+        {% for log in system_logs %}
+            <li>{{ log }}</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
+

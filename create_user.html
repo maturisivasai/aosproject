@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+</head>
+<body>
+    <h1>Create New User</h1>
+    <form method="POST">
+        <label>Username:</label><br>
+        <input type="text" name="username" required><br>
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br>
+        <label>Role:</label><br>
+        <select name="role">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select><br>
+        <label>Permissions:</label><br>
+        <select name="permissions">
+            <option value="read">Read</option>
+            <option value="write">Write</option>
+            <option value="edit">Edit</option>
+            <option value="admin">Admin</option>
+        </select><br><br>
+        <button type="submit">Create User</button>
+    </form>
+</body>
+</html>
+
